@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudanese Pan African Youth Union - Membership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        .ltr {
+            direction: ltr;
+            text-align: left;
+        }
+        .hidden-language {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .pan-african-bg {
+            background: linear-gradient(135deg, #002B5C 0%, #EAAA00 50%, #008751 100%);
+        }
+        .word-counter {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .word-counter.warning {
+            color: #e53e3e;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Language Switcher -->
+    <div class="language-switcher flex space-x-2">
+        <button onclick="switchLanguage('ar')" class="bg-green-600 text-white px-3 py-1 rounded-lg shadow hover:bg-green-700 transition">
+            العربية
+        </button>
+        <button onclick="switchLanguage('en')" class="bg-blue-600 text-white px-3 py-1 rounded-lg shadow hover:bg-blue-700 transition">
+            English
+        </button>
+        <button onclick="switchLanguage('fr')" class="bg-yellow-500 text-white px-3 py-1 rounded-lg shadow hover:bg-yellow-600 transition">
+            Français
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="pan-african-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4" id="header-title">الاتحاد الأفروعمومي للشباب السوداني</h1>
+            <p class="text-xl md:text-2xl mb-6" id="header-subtitle">نموذج طلب العضوية</p>
+            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto bg-white bg-opacity-20 p-4 rounded-lg">
+                <p class="text-sm md:text-base" id="header-description">
+                    انضم إلى حركة الشباب الأفروعمومي السوداني وساهم في بناء مستقبل أفضل لأفريقيا
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Membership Process -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-green-800" id="process-title">مراحل الانضمام</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Stage 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-green-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">1</div>
+                        <h3 class="text-xl font-semibold text-gray-800" id="stage1-title">المرحلة الأولى: الانضمام بصفة "منضم"</h3>
+                    </div>
+                    <p class="text-gray-700" id="stage1-desc">
+                        مرحلة ما قبل العضوية الكاملة، وتعتبر فترة تأهيلية وتدريبية. يجب على المنضم إثبات جدارته خلال هذه الفترة.
+                    </p>
+                </div>
+                
+                <!-- Stage 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">2</div>
+                        <h3 class="text-xl font-semibold text-gray-800" id="stage2-title">المرحلة الثانية: العضوية الكاملة</h3>
+                    </div>
+                    <p class="text-gray-700" id="stage2-desc">
+                        تمنح بعد اجتياز المرحلة الأولى بنجاح وإثبات الجدارة من خلال الالتزام والمشاركة الفعالة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Requirements -->
+            <div class="mt-12 bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                <h3 class="text-xl font-semibold text-yellow-800 mb-4" id="requirements-title">متطلبات العضوية الكاملة:</h3>
+                <ol class="list-decimal pl-5 space-y-2 text-gray-700">
+                    <li id="req1">مطالعة ومذاكرة منافيستو الاتحاد والكتابات التأسيسية</li>
+                    <li id="req2">الالتزام بحضور الاجتماعات والمشاركة الفاعلة</li>
+                    <li id="req3">إنجاز المهام والتكليفات الموكلة بكفاءة</li>
+                    <li id="req4">الحفاظ على سرية المعلومات التنظيمية</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
+                <div class="pan-african-bg py-4 px-6">
+                    <h2 class="text-2xl font-bold text-white" id="form-title">نموذج طلب الانضمام</h2>
+                </div>
+                
+                <form class="p-6" id="membershipForm"  action="https://formspree.io/f/xovwwogd" method="POST">
+                    <!-- Personal Information -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-green-800 border-b pb-2" id="personal-info-title">المعلومات الشخصية</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2" id="name-label">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2" id="email-label">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-2" id="phone-label">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- Age -->
+                            <div>
+                                <label for="age" class="block text-gray-700 mb-2" id="age-label">العمر</label>
+                                <input type="number" id="age" name="age" min="16" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Birth and Residence Information -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-green-800 border-b pb-2" id="location-title">معلومات الميلاد والإقامة</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Birth Place -->
+                            <div>
+                                <label for="birthPlace" class="block text-gray-700 mb-2" id="birth-place-label">مكان الميلاد</label>
+                                <input type="text" id="birthPlace" name="birthPlace" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- State -->
+                            <div>
+                                <label for="state" class="block text-gray-700 mb-2" id="state-label">الولاية</label>
+                                <input type="text" id="state" name="state" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- City -->
+                            <div>
+                                <label for="city" class="block text-gray-700 mb-2" id="city-label">المدينة</label>
+                                <input type="text" id="city" name="city" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- Residence -->
+                            <div>
+                                <label for="residence" class="block text-gray-700 mb-2" id="residence-label">مكان الإقامة الحالي</label>
+                                <input type="text" id="residence" name="residence" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <!-- Country -->
+                            <div>
+                                <label for="country" class="block text-gray-700 mb-2" id="country-label">الدولة</label>
+                                <input type="text" id="country" name="country" required 
+                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education and Experience -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-green-800 border-b pb-2" id="education-title">المؤهلات والخبرات</h3>
+                        
+                        <!-- Education Level -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" id="education-label">المستوى التعليمي</label>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="education" value="basic" class="text-green-600" required>
+                                    <span class="ml-2" id="education-basic">أساسي</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="education" value="secondary" class="text-green-600">
+                                    <span class="ml-2" id="education-secondary">ثانوي</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="education" value="university" class="text-green-600">
+                                    <span class="ml-2" id="education-university">جامعي</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="education" value="postgraduate" class="text-green-600">
+                                    <span class="ml-2" id="education-postgrad">ما فوق جامعي</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Previous Membership -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" id="previous-membership-label">هل سبق لك الانضمام لأي جسم سياسي أو مدني؟</label>
+                            <div class="flex gap-4 mb-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="previousMembership" value="yes" class="text-green-600" onchange="toggleOrgInfo(true)" required>
+                                    <span class="ml-2" id="yes-label">نعم</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="previousMembership" value="no" class="text-green-600" onchange="toggleOrgInfo(false)">
+                                    <span class="ml-2" id="no-label">لا</span>
+                                </label>
+                            </div>
+                            
+                            <div id="orgInfoContainer" class="hidden space-y-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" id="still-member-label">هل ما زلت منضمًا؟</label>
+                                    <div class="flex gap-4">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="stillMember" value="yes" class="text-green-600">
+                                            <span class="ml-2" id="still-yes-label">نعم</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="stillMember" value="no" class="text-green-600">
+                                            <span class="ml-2" id="still-no-label">لا</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="orgName" class="block text-gray-700 mb-2" id="org-name-label">اسم المنظمة/الجسم</label>
+                                    <input type="text" id="orgName" name="orgName" 
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pan-Africanism Knowledge -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-green-800 border-b pb-2" id="knowledge-title">المعرفة بالأفروعمومية</h3>
+                        
+                        <label for="panAfricanKnowledge" class="block text-gray-700 mb-2" id="knowledge-label">
+                            اكتب ما لا يقل عن 50 كلمة عن الأفروعمومية (مبادئها، تاريخها، أهميتها، إلخ)
+                        </label>
+                        <textarea id="panAfricanKnowledge" name="panAfricanKnowledge" rows="6" required
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                            oninput="countWords(this)"></textarea>
+                        <div id="wordCounter" class="word-counter mt-1" id="word-counter-label">0 كلمة</div>
+                    </div>
+                    
+                    <!-- Agreement -->
+                    <div class="mb-8">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="agreement" name="agreement" type="checkbox" required
+                                    class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="agreement" class="font-medium text-gray-700" id="agreement-label">
+                                    أوافق على الشروط والأحكام وأتعهد بالالتزام بقيم ومبادئ الاتحاد الأفروعمومي للشباب السوداني
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="flex justify-center">
+                        <button type="submit" class="pan-african-bg text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg" id="submit-btn">
+                            تقديم الطلب
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold" id="footer-title">الاتحاد الأفروعمومي للشباب السوداني</h3>
+                    <p class="text-gray-400 mt-1" id="footer-motto">من أجل أفريقيا موحدة ومزدهرة</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=61576364080694&mibextid=ZbWKwL" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm" id="copyright">
+                © 2025 جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language content
+        const languages = {
+            ar: {
+                // Header
+                "header-title": "الاتحاد الأفروعمومي للشباب السوداني",
+                "header-subtitle": "نموذج طلب العضوية",
+                "header-description": "انضم إلى حركة الشباب الأفروعمومي السوداني وساهم في بناء مستقبل أفضل لأفريقيا",
+                
+                // Process
+                "process-title": "مراحل الانضمام",
+                "stage1-title": "المرحلة الأولى: الانضمام بصفة \"منضم\"",
+                "stage1-desc": "مرحلة ما قبل العضوية الكاملة، وتعتبر فترة تأهيلية وتدريبية. يجب على المنضم إثبات جدارته خلال هذه الفترة.",
+                "stage2-title": "المرحلة الثانية: العضوية الكاملة",
+                "stage2-desc": "تمنح بعد اجتياز المرحلة الأولى بنجاح وإثبات الجدارة من خلال الالتزام والمشاركة الفعالة.",
+                "requirements-title": "متطلبات العضوية الكاملة:",
+                "req1": "مطالعة ومذاكرة منافيستو الاتحاد والكتابات التأسيسية",
+                "req2": "الالتزام بحضور الاجتماعات والمشاركة الفاعلة",
+                "req3": "إنجاز المهام والتكليفات الموكلة بكفاءة",
+                "req4": "الحفاظ على سرية المعلومات التنظيمية",
+                
+                // Form
+                "form-title": "نموذج طلب الانضمام",
+                "personal-info-title": "المعلومات الشخصية",
+                "name-label": "الاسم الكامل",
+                "email-label": "البريد الإلكتروني",
+                "phone-label": "رقم الهاتف",
+                "age-label": "العمر",
+                "location-title": "معلومات الميلاد والإقامة",
+                "birth-place-label": "مكان الميلاد",
+                "state-label": "الولاية",
+                "city-label": "المدينة",
+                "residence-label": "مكان الإقامة الحالي",
+                "country-label": "الدولة",
+                "education-title": "المؤهلات والخبرات",
+                "education-label": "المستوى التعليمي",
+                "education-basic": "أساسي",
+                "education-secondary": "ثانوي",
+                "education-university": "جامعي",
+                "education-postgrad": "ما فوق جامعي",
+                "previous-membership-label": "هل سبق لك الانضمام لأي جسم سياسي أو مدني؟",
+                "yes-label": "نعم",
+                "no-label": "لا",
+                "still-member-label": "هل ما زلت منضمًا؟",
+                "still-yes-label": "نعم",
+                "still-no-label": "لا",
+                "org-name-label": "اسم المنظمة/الجسم",
+                "knowledge-title": "المعرفة بالأفروعمومية",
+                "knowledge-label": "اكتب ما لا يقل عن 50 كلمة عن الأفروعمومية (مبادئها، تاريخها، أهميتها، إلخ)",
+                "word-counter-label": "0 كلمة",
+                "agreement-label": "أوافق على الشروط والأحكام وأتعهد بالالتزام بقيم ومبادئ الاتحاد الأفروعمومي للشباب السوداني",
+                "submit-btn": "تقديم الطلب",
+                
+                // Footer
+                "footer-title": "الاتحاد الأفروعمومي للشباب السوداني",
+                "footer-motto": "من أجل أفريقيا موحدة ومزدهرة",
+                "copyright": "© 2025 جميع الحقوق محفوظة"
+            },
+            en: {
+                // Header
+                "header-title": "Sudanese Pan African Youth Union",
+                "header-subtitle": "Membership Application Form",
+                "header-description": "Join the Sudanese Pan African Youth movement and contribute to building a better future for Africa",
+                
+                // Process
+                "process-title": "Membership Process",
+                "stage1-title": "Stage 1: Organized Membership",
+                "stage1-desc": "Pre-full membership stage, considered a probationary and training period. The organized member must prove their worth during this period.",
+                "stage2-title": "Stage 2: Full Membership",
+                "stage2-desc": "Granted after successfully passing the first stage and demonstrating worth through commitment and active participation.",
+                "requirements-title": "Full Membership Requirements:",
+                "req1": "Study and discuss the Union's manifesto and foundational writings",
+                "req2": "Commit to attending meetings and active participation",
+                "req3": "Efficiently complete assigned tasks and responsibilities",
+                "req4": "Maintain confidentiality of organizational information",
+                
+                // Form
+                "form-title": "Membership Application Form",
+                "personal-info-title": "Personal Information",
+                "name-label": "Full Name",
+                "email-label": "Email Address",
+                "phone-label": "Phone Number",
+                "age-label": "Age",
+                "location-title": "Birth and Residence Information",
+                "birth-place-label": "Place of Birth",
+                "state-label": "State",
+                "city-label": "City",
+                "residence-label": "Current Residence",
+                "country-label": "Country",
+                "education-title": "Qualifications and Experience",
+                "education-label": "Education Level",
+                "education-basic": "Basic",
+                "education-secondary": "Secondary",
+                "education-university": "University",
+                "education-postgrad": "Postgraduate",
+                "previous-membership-label": "Have you ever joined any political or civil organization?",
+                "yes-label": "Yes",
+                "no-label": "No",
+                "still-member-label": "Are you still a member?",
+                "still-yes-label": "Yes",
+                "still-no-label": "No",
+                "org-name-label": "Organization Name",
+                "knowledge-title": "Knowledge of Pan-Africanism",
+                "knowledge-label": "Write at least 50 words about Pan-Africanism (its principles, history, importance, etc.)",
+                "word-counter-label": "0 words",
+                "agreement-label": "I agree to the terms and conditions and pledge to adhere to the values and principles of the Sudanese Pan African Youth Union",
+                "submit-btn": "Submit Application",
+                
+                // Footer
+                "footer-title": "Sudanese Pan African Youth Union",
+                "footer-motto": "For a United and Prosperous Africa",
+                "copyright": "© 2025 All Rights Reserved"
+            },
+            fr: {
+                // Header
+                "header-title": "Union Panafricaine de la Jeunesse Soudanaise",
+                "header-subtitle": "Formulaire de demande d'adhésion",
+                "header-description": "Rejoignez le mouvement panafricain de la jeunesse soudanaise et contribuez à bâtir un avenir meilleur pour l'Afrique",
+                
+                // Process
+                "process-title": "Processus d'adhésion",
+                "stage1-title": "Étape 1 : Adhésion en tant que \"membre organisé\"",
+                "stage1-desc": "Étape précédant l'adhésion complète, considérée comme une période probatoire et de formation. Le membre organisé doit faire ses preuves pendant cette période.",
+                "stage2-title": "Étape 2 : Adhésion complète",
+                "stage2-desc": "Accordée après avoir réussi la première étape et démontré sa valeur par l'engagement et la participation active.",
+                "requirements-title": "Exigences pour l'adhésion complète:",
+                "req1": "Étudier et discuter du manifeste de l'Union et des écrits fondateurs",
+                "req2": "S'engager à assister aux réunions et à participer activement",
+                "req3": "Exécuter efficacement les tâches et responsabilités assignées",
+                "req4": "Maintenir la confidentialité des informations organisationnelles",
+                
+                // Form
+                "form-title": "Formulaire de demande d'adhésion",
+                "personal-info-title": "Informations personnelles",
+                "name-label": "Nom complet",
+                "email-label": "Adresse e-mail",
+                "phone-label": "Numéro de téléphone",
+                "age-label": "Âge",
+                "location-title": "Informations sur la naissance et la résidence",
+                "birth-place-label": "Lieu de naissance",
+                "state-label": "État",
+                "city-label": "Ville",
+                "residence-label": "Lieu de résidence actuel",
+                "country-label": "Pays",
+                "education-title": "Qualifications et expérience",
+                "education-label": "Niveau d'éducation",
+                "education-basic": "Primaire",
+                "education-secondary": "Secondaire",
+                "education-university": "Universitaire",
+                "education-postgrad": "Postuniversitaire",
+                "previous-membership-label": "Avez-vous déjà adhéré à une organisation politique ou civile?",
+                "yes-label": "Oui",
+                "no-label": "Non",
+                "still-member-label": "Êtes-vous toujours membre?",
+                "still-yes-label": "Oui",
+                "still-no-label": "Non",
+                "org-name-label": "Nom de l'organisation",
+                "knowledge-title": "Connaissance du panafricanisme",
+                "knowledge-label": "Écrivez au moins 50 mots sur le panafricanisme (ses principes, son histoire, son importance, etc.)",
+                "word-counter-label": "0 mots",
+                "agreement-label": "J'accepte les termes et conditions et m'engage à respecter les valeurs et principes de l'Union Panafricaine de la Jeunesse Soudanaise",
+                "submit-btn": "Soumettre la demande",
+                
+                // Footer
+                "footer-title": "Union Panafricaine de la Jeunesse Soudanaise",
+                "footer-motto": "Pour une Afrique unie et prospère",
+                "copyright": "© 2025 Tous droits réservés"
+            }
+        };
+
+        // Current language
+        let currentLang = 'ar';
+
+        // Switch language function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update HTML direction
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'ar';
+            } else {
+                document.documentElement.dir = 'ltr';
+                document.documentElement.lang = lang;
+            }
+            
+            // Update all text elements
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(element => {
+                const id = element.id;
+                if (languages[lang][id]) {
+                    if (element.tagName === 'INPUT' && element.type !== 'submit') {
+                        element.placeholder = languages[lang][id];
+                    } else {
+                        element.textContent = languages[lang][id];
+                    }
+                }
+            });
+            
+            // Add fade-in effect
+            document.body.classList.add('fade-in');
+            setTimeout(() => {
+                document.body.classList.remove('fade-in');
+            }, 500);
+        }
+
+        // Toggle organization info
+        function toggleOrgInfo(show) {
+            const container = document.getElementById('orgInfoContainer');
+            if (show) {
+                container.classList.remove('hidden');
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
+        // Word counter
+        function countWords(textarea) {
+            const text = textarea.value.trim();
+            const wordCount = text ? text.split(/\s+/).length : 0;
+            const counter = document.getElementById('wordCounter');
+            
+            counter.textContent = wordCount + ' ' + 
+                (currentLang === 'en' ? 'words' : 
+                 currentLang === 'fr' ? 'mots' : 'كلمة');
+            
+            if (wordCount < 50) {
+                counter.classList.add('warning');
+            } else {
+                counter.classList.remove('warning');
+            }
+        }
+
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate word count
+            const text = document.getElementById('panAfricanKnowledge').value.trim();
+            const wordCount = text ? text.split(/\s+/).length : 0;
+            
+            if (wordCount < 50) {
+                alert(currentLang === 'en' ? 'Please write at least 50 words about Pan-Africanism' :
+                    currentLang === 'fr' ? 'Veuillez écrire au moins 50 mots sur le panafricanisme' :
+                    'يرجى كتابة ما لا يقل عن 50 كلمة عن الأفروعمومية');
+                return;
+            }
+
+            // Send form data via fetch
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(currentLang === 'en' ? 'Your application has been submitted successfully!' :
+                        currentLang === 'fr' ? 'Votre demande a été soumise avec succès!' :
+                        'تم تقديم طلبك بنجاح!');
+                    form.reset();
+                } else {
+                    alert(currentLang === 'en' ? 'Submission failed. Please try again.' :
+                        currentLang === 'fr' ? 'Échec de l\'envoi. Veuillez réessayer.' :
+                        'فشل في الإرسال. يرجى المحاولة مرة أخرى.');
+                }
+            })
+            .catch(error => {
+                alert(currentLang === 'en' ? 'An error occurred. Please try again later.' :
+                    currentLang === 'fr' ? 'Une erreur s\'est produite. Veuillez réessayer plus tard.' :
+                    'حدث خطأ. الرجاء المحاولة لاحقًا.');
+            });
+        });
+
+
+        // Initialize with Arabic
+        switchLanguage('ar');
+    </script>
+</body>
+</html>

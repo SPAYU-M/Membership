@@ -32,7 +32,7 @@
             to { opacity: 1; }
         }
         .pan-african-bg {
-            background: linear-gradient(135deg, #002B5C 0%, #EAAA00 50%, #008751 100%);
+            background-image: url(sapyuo.png) ; background-size: cover;
         }
         .word-counter {
             font-size: 0.8rem;
@@ -58,13 +58,13 @@
     </div>
 
     <!-- Header -->
-    <header class="pan-african-bg text-white py-12">
+    <header class="pan-african-bg text-white text-xl font-bold drop-shadow-xl py-12">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4" id="header-title">الاتحاد الأفروعمومي للشباب السوداني</h1>
-            <p class="text-xl md:text-2xl mb-6" id="header-subtitle">نموذج طلب العضوية</p>
-            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto bg-white bg-opacity-20 p-4 rounded-lg">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4" id="header-title">الاتحاد الأفروعمومية للشباب السوداني</h1>
+            <p class="text-xl md:text-2xl mb-6" id="header-subtitle"> طلب العضوية</p>
+            <div class="w-full md:w-3/4 lg:w-1/2 mx-auto bg-black bg-opacity-30 p-4 rounded-lg">
                 <p class="text-sm md:text-base" id="header-description">
-                    انضم إلى حركة الشباب الأفروعمومي السوداني وساهم في بناء مستقبل أفضل لأفريقيا
+                    انضم إلى حركة الشباب الأفروعمومية السوداني وساهم في بناء مستقبل أفضل لأفريقيا
                 </p>
             </div>
         </div>
@@ -117,7 +117,7 @@
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-lg shadow-md overflow-hidden max-w-4xl mx-auto">
                 <div class="pan-african-bg py-4 px-6">
-                    <h2 class="text-2xl font-bold text-white" id="form-title">نموذج طلب الانضمام</h2>
+                    <h2 class="text-2xl font-bold text-white" id="form-title"> طلب الانضمام</h2>
                 </div>
                 
                 <form class="p-6" id="membershipForm"  action="https://formspree.io/f/xovwwogd" method="POST">
@@ -153,6 +153,35 @@
                                 <input type="number" id="age" name="age" min="16" required 
                                     class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
                             </div>
+                            <!-- داخل <div class="grid md:grid-cols-2 gap-6"> الموجود بالفعل -->
+                            <!-- تاريخ الميلاد -->
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 mb-2" id="birthdate-label">تاريخ الميلاد</label>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <input type="number" name="birth_day" placeholder="اليوم" min="1" max="31" required
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                    <input type="number" name="birth_month" placeholder="الشهر" min="1" max="12" required
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                    <input type="number" name="birth_year" placeholder="السنة" min="1900" max="2100" required
+                                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                </div>
+                            </div>
+
+                            <!-- الجنس -->
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 mb-2" id="gender-label">الجنس</label>
+                                <div class="flex gap-6">
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender" value="male" class="text-green-600" required>
+                                        <span class="ml-2" id="male-label">ذكر</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender" value="female" class="text-green-600">
+                                        <span class="ml-2" id="female-label">أنثى</span>
+                                    </label>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     
@@ -293,7 +322,7 @@
                     
                     <!-- Submit Button -->
                     <div class="flex justify-center">
-                        <button type="submit" class="pan-african-bg text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg" id="submit-btn">
+                        <button type="submit" class="pan-african-bg text-white text-xl font-bold drop-shadow-xl px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition shadow-lg" id="submit-btn">
                             تقديم الطلب
                         </button>
                     </div>
@@ -307,18 +336,24 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold" id="footer-title">الاتحاد الأفروعمومي للشباب السوداني</h3>
+                    <h3 class="text-xl font-bold" id="footer-title">الاتحاد الأفروعمومية للشباب السوداني</h3>
                     <p class="text-gray-400 mt-1" id="footer-motto">من أجل أفريقيا موحدة ومزدهرة</p>
                 </div>
                 <div class="flex space-x-4">
                     <a href="https://www.facebook.com/profile.php?id=61576364080694&mibextid=ZbWKwL" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://x.com/spayu2025?s=09" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="https://www.instagram.com/sudanesepanafrikan?igsh=YzljYTk1ODg3Zg==" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@spayu2025?si=No0J8z6rIfraQBNy" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@spayu2025?_t=ZM-8xH7rq7vY7M&_r=1" class="text-gray-400 hover:text-white transition">
+                        <i class=" fab fa-tiktok"></i>
                     </a>
                 </div>
             </div>
@@ -333,9 +368,9 @@
         const languages = {
             ar: {
                 // Header
-                "header-title": "الاتحاد الأفروعمومي للشباب السوداني",
-                "header-subtitle": "نموذج طلب العضوية",
-                "header-description": "انضم إلى حركة الشباب الأفروعمومي السوداني وساهم في بناء مستقبل أفضل لأفريقيا",
+                "header-title": "الاتحاد الأفروعمومية للشباب السوداني",
+                "header-subtitle": " طلب العضوية",
+                "header-description": "انضم إلى حركة الشباب الأفروعمومية السوداني وساهم في بناء مستقبل أفضل لأفريقيا",
                 
                 // Process
                 "process-title": "مراحل الانضمام",
@@ -350,12 +385,16 @@
                 "req4": "الحفاظ على سرية المعلومات التنظيمية",
                 
                 // Form
-                "form-title": "نموذج طلب الانضمام",
+                "form-title": " طلب الانضمام",
                 "personal-info-title": "المعلومات الشخصية",
                 "name-label": "الاسم الكامل",
                 "email-label": "البريد الإلكتروني",
                 "phone-label": "رقم الهاتف",
                 "age-label": "العمر",
+                "birthdate-label": "تاريخ الميلاد",
+                "gender-label":" الجنس" ,
+                "male-label":"ذكر",
+                "female-label":"انثى",
                 "location-title": "معلومات الميلاد والإقامة",
                 "birth-place-label": "مكان الميلاد",
                 "state-label": "الولاية",
@@ -378,11 +417,11 @@
                 "knowledge-title": "المعرفة بالأفروعمومية",
                 "knowledge-label": "اكتب ما لا يقل عن 50 كلمة عن الأفروعمومية (مبادئها، تاريخها، أهميتها، إلخ)",
                 "word-counter-label": "0 كلمة",
-                "agreement-label": "أوافق على الشروط والأحكام وأتعهد بالالتزام بقيم ومبادئ الاتحاد الأفروعمومي للشباب السوداني",
+                "agreement-label": "أوافق على الشروط والأحكام وأتعهد بالالتزام بقيم ومبادئ الاتحاد الأفروعمومية للشباب السوداني",
                 "submit-btn": "تقديم الطلب",
                 
                 // Footer
-                "footer-title": "الاتحاد الأفروعمومي للشباب السوداني",
+                "footer-title": "الاتحاد الأفروعمومية للشباب السوداني",
                 "footer-motto": "من أجل أفريقيا موحدة ومزدهرة",
                 "copyright": "© 2025 جميع الحقوق محفوظة"
             },
@@ -411,6 +450,10 @@
                 "email-label": "Email Address",
                 "phone-label": "Phone Number",
                 "age-label": "Age",
+                "birthdate-label": "Date of birth",
+                "gender-label":"gender",
+                "male-label":"Male",
+                "female-label":"Female",
                 "location-title": "Birth and Residence Information",
                 "birth-place-label": "Place of Birth",
                 "state-label": "State",
@@ -466,6 +509,10 @@
                 "email-label": "Adresse e-mail",
                 "phone-label": "Numéro de téléphone",
                 "age-label": "Âge",
+                "birthdate-label": "Date de naissance",
+                "gender-label":"gender",
+                "male-label":"Male",
+                "female-label":"Female",
                 "location-title": "Informations sur la naissance et la résidence",
                 "birth-place-label": "Lieu de naissance",
                 "state-label": "État",
